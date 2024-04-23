@@ -4,7 +4,7 @@ const WebcamComponent =  ({ structureId, cameraId }) => {
   const webcamStreamUrl = `http://127.0.0.1:8000/stream/${structureId}/${cameraId}/`;
   const navigate = useNavigate();
   return (
-    <><button onClick={()=>navigate(-1)}>Return to Selector</button>
+    <>
     <img
       style={{
         display: 'block',
