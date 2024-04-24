@@ -13,6 +13,11 @@ import SignUpForm from './Components/adduser';
 import StructureAndCameraSelector from './init_str_camera';
 
 const Content = () => {
+  function WebcamAndListWrapper() {
+    const { structureId, cameraId } = useParams();
+  
+    return <WebcamAndList structureId={structureId} cameraId={cameraId} />;
+  }
   return (
     <div>
       <Routes>
@@ -22,10 +27,16 @@ const Content = () => {
         <Route path="/profile/:userId" element={<ProfilePage />} /> {/* Assuming profile/:userId route */}
         {/* Add more routes for other components */}
         <Route path="/LastArrivalList" element={<LastArrivalList />} /> 
-        <Route path="/WebcamComponent" element={<WebcamAndList /> } /> 
+        
         <Route path="/StructureAndCameraSelector" element={<StructureAndCameraSelector /> } />
         
         <Route path="/Adduser" element={<SignUpForm /> } />
+        <Route 
+        path="/WebcamAndList/:structureId/:cameraId" 
+        element={<WebcamAndListWrapper />} 
+/> 
+
+  
       </Routes>
     </div>
   );

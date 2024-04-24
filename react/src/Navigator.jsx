@@ -30,11 +30,12 @@ const categories = [
       //   route: '/signUp',
       // },
       // {
-      //   id: 'Access',
+      //   id: 'web',
       //   icon: <HomeIcon />,
-      //   route: '/Access',
+      //   route: '',
       // }
       //   ,
+      
       {
         id: 'Adduser',
         icon: <CameraAltIcon />,

@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+import us from 'react-route-dom'
 import WebcamAndList from './Components/VideoFeed/WebcamAndList';
 
 function StructureAndCameraSelector() {
@@ -8,7 +11,7 @@ function StructureAndCameraSelector() {
     const [selectedCameraId, setSelectedCameraId] = useState(''); // Define selectedCameraId state
     const [isLoading, setIsLoading] = useState(false);
     const [showWebcam, setShowWebcam] = useState(false); // State to toggle webcam component
-
+    const navigate = useNavigate();
     useEffect(() => {
         fetchStructures();
     }, []);
@@ -45,6 +48,9 @@ function StructureAndCameraSelector() {
             setCameras([]);
         }
     };
+    const handclick = () => {  
+      navigate(`/WebcamAndList/${structureId}/${cameraId}`);    
+      }
 
     const handleCameraChange = (event) => {
         const cameraId = event.target.value;
@@ -89,12 +95,12 @@ function StructureAndCameraSelector() {
               </div>
             </>
           )}
-          {showWebcam && (
-            <WebcamAndList
-              structureId={selectedStructure}
-              cameraId={selectedCameraId}
-            />
-          )}
+
+          <button property='unclickaale' onClick={handclick}>
+              lancer le controle !
+          </button>
+           
+        
         </div>
       );
 }
